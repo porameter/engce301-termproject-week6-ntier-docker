@@ -1,5 +1,5 @@
 // src/config/database.js
-// PostgreSQL Database Connection for Docker Environment
+// PostgreSQL Database Connection - Support both Docker and Railway
 
 const { Pool } = require('pg');
 
@@ -19,7 +19,7 @@ const pool = process.env.DATABASE_URL
         idleTimeoutMillis: 30000,
         connectionTimeoutMillis: 5000
       });
-      
+
 // Connection events
 pool.on('connect', () => {
     console.log('✅ Connected to PostgreSQL database');
